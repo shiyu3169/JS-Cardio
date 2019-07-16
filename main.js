@@ -99,14 +99,40 @@ function sortByHeight() {
 const a = [-1, 150, 190, 170, -1, -1, 160, 180];
 console.log(sortByHeight(a)); */
 
-// Q5 : Missing letters
+/* // Q5 : Missing letters
 // Find the missing letter in the passed letter range and return it. If all letters are present, return undefined
 // ex.
 // missingLetters("abce") == "d"
 // missingLetters("abcdefghjklmno") == "i"
 // missingletters("abcdefghijklmnopqrstuvwxyz") == undefined
 function missingleters(str) {
-  let compare = str.charCodeAt(str[0);
+  let compare = str.charCodeAt(0);
+  let missing;
+
+  str.split('').map((char, i) => {
+    if (str.charCodeAt(i) == compare) {
+      ++compare;
+    } else {
+      missing = String.fromCharCode(compare);
+    }
+  });
+
+  return missing;
 }
 
-console.log(missingLetters('abce'));
+console.log(missingleters('abce')); */
+
+// Q6: Even & Odd Sums
+// Take in an array and return an array of the sums of even and odd numbers
+// ex.
+// evenOddSums([50,60,45,71]) == [170, 116]
+function evenOddSums(arr) {
+  let evenSum = 0;
+  let oddSum = 0;
+
+  arr.forEach(num => (num % 2 === 0 ? (evenSum += num) : (oddSum += num)));
+
+  return [evenSum, oddSum];
+}
+
+console.log(evenOddSums([50, 60, 45, 71]));
