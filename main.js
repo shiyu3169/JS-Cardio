@@ -126,7 +126,7 @@ console.log(missingleters('abce')); */
 // Take in an array and return an array of the sums of even and odd numbers
 // ex.
 // evenOddSums([50,60,45,71]) == [170, 116]
-function evenOddSums(arr) {
+/* function evenOddSums(arr) {
   let evenSum = 0;
   let oddSum = 0;
 
@@ -135,4 +135,158 @@ function evenOddSums(arr) {
   return [evenSum, oddSum];
 }
 
-console.log(evenOddSums([50, 60, 45, 71]));
+console.log(evenOddSums([50, 60, 45, 71])); */
+
+// Q7: Reverse A String
+// return a String in reverse
+// ex. reverseString("hello") === "olleh"
+// function reverseString(str) {
+//   const strArr = str.split('');
+//   strArr.reverse();
+
+//   return strArr.join('');
+// }
+
+// Solution 2
+// function reverseString(str) {
+//   let revString = '';
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     revString = revString + str[i];
+//   }
+//   return revString;
+// }
+
+// Solution 3
+// function reverseString(str) {
+//   let revString = '';
+//   for (let i = 0; i <= str.length - 1; i++) {
+//     revString = str[i] + revString;
+//   }
+//   return revString;
+// }
+
+// Solution 4
+// function reverseString(str) {
+//   let revString = '';
+//   for (let char of str) {
+//     revString = char + revString;
+//   }
+//   return revString;
+// }
+
+// Solution 5
+// function reverseString(str) {
+//   let revString = '';
+//   str.split('').forEach(char => (revString = char + revString));
+//   return revString;
+// }
+
+// console.log(reverseString('hello'));
+
+// Solution 6
+// function reverseString(str) {
+//   return str.split('').reduce((revString, char) => {
+//     return char + revString;
+//   });
+// }
+
+// console.log(reverseString('hello'));
+
+// Q8: Validate a Palindrome
+// Return true if palindrome and false if not
+// ex. isPalindrome("racecar") === true, ifPalindrome("hello") === false
+
+// function isPalindrome(str) {
+//   const revString = str
+//     .split('')
+//     .reverse()
+//     .join('');
+//   return revString === str;
+// }
+
+// Q9: Reverse an Integer
+// Return an integer in reverse
+// ex. reverseInt(521) === 125
+// function reverseInt(int) {
+//   const revString = int
+//     .toString()
+//     .split('')
+//     .reverse()
+//     .join('');
+
+//   return parseInt(revString) * Math.sign(int);
+// }
+
+// Q10: Capitalize letters
+// Return a string with the first letter of every word capitalized
+// ex.  capitalizeLetters("i love javascript") === "I Love Javascript"
+/* function capitalizeLetters(str) {
+  const strArr = str.toLowerCase().split(' ');
+
+  for (let i = 0; i < strArr.length; i++) {
+    strArr[i] =
+      strArr[i].substring(0, 1).toUpperCase() + strArr[i].substring(1);
+  }
+
+  return strArr.join(' ');
+}
+console.log(capitalizeLetters('i love javascript')); */
+
+// Solution 2
+/* function capitalizeLetters(str) {
+  return str
+    .toLowerCase()
+    .split(' ')
+    .map(word => word[0].toUpperCase() + word.subStr(1))
+    .join(' ');
+}
+
+// Solution 3
+function capitalizeLetters(str) {
+  return str.replace(/\b[a-z]/gi, char => char.toUpperCase());
+} */
+
+// Q11: Max Character
+// Return the character that is most common in a string
+// ex. maxCharacter('javascript') === 'a'
+/* function maxCharacter(str) {
+  const charMap = {};
+  let maxNum = 0;
+  let maxChar = '';
+
+  str.split('').forEach(char => {
+    if (charMap[char]) {
+      charMap[char]++;
+    } else {
+      charMap[char] = 1;
+    }
+  });
+
+  for (let char in charMap) {
+    if (charMap[char] > maxNum) {
+      maxNum = charMap[char];
+      maxChar = char;
+    }
+  }
+
+  return maxChar;
+}
+
+console.log(maxCharacter('javascript'));
+
+ */
+// Q12: FizzBuzz
+/* function fizzBuzz() {
+  for (let i = 1; i <= 100; i++) {
+    if (i % 15 === 0) {
+      console.log('FizzBuzz');
+    } else if (i % 3 === 0) {
+      console.log('Fizz');
+    } else if (i % 5 === 0) {
+      console.log('Buzz');
+    } else {
+      console.log(i);
+    }
+  }
+}
+ */
